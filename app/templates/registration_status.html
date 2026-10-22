@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Acompanhar cadastro — Projeto acadêmico{% endblock %}
+{% block content %}
+<section class="success-section">
+  <div class="success-card">
+    {% if valid %}
+      <div class="success-icon">✓</div>
+      <h1>Cadastro recebido</h1>
+      <p>Olá, {{ registration.name }}. Seu cadastro consta como recebido em {{ registration.created_at.strftime('%d/%m/%Y às %H:%M') }}.</p>
+      <p>Este projeto é uma simulação acadêmica de conscientização sobre phishing, não um serviço oficial do Banco do Brasil.</p>
+    {% else %}
+      <h1>Link inválido ou expirado</h1>
+      <p>Não foi possível validar este link. Volte à página do projeto e faça um novo cadastro, se desejar.</p>
+    {% endif %}
+    <a href="{{ url_for('main.index') }}" class="btn-cta">Voltar para a página inicial</a>
+  </div>
+</section>
+{% endblock %}

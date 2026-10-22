@@ -1,0 +1,47 @@
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, .28);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .22s ease, visibility .22s ease;
+}
+.menu-overlay.active { opacity: 1; visibility: visible; }
+
+.side-menu {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 590px;
+    max-width: 94vw;
+    height: 100vh;
+    background: var(--bb-blue);
+    color: #fff;
+    transform: translateX(-100%);
+    transition: transform .24s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 6px 0 20px rgba(0,0,0,.16);
+}
+.side-menu.open { transform: translateX(0); }
+.side-menu-header { height: 108px; padding: 0 20px; border-bottom: 1px solid rgba(255,255,255,.55); display: flex; align-items: center; justify-content: space-between; font-size: 19px; }
+.menu-close-btn { background: transparent; border: 0; color: #fff; font-size: 39px; line-height: 1; cursor: pointer; font-weight: 300; }
+.side-menu-content { position: relative; flex: 1; overflow: hidden; }
+.menu-panel { position: absolute; inset: 0; padding: 24px 0; overflow-y: auto; opacity: 0; visibility: hidden; transform: translateX(18px); transition: opacity .18s ease, transform .18s ease, visibility .18s ease; }
+.menu-panel.active { opacity: 1; visibility: visible; transform: translateX(0); }
+.side-menu-links { padding: 0 20px; }
+.side-menu-links li { margin: 0; }
+.side-menu-links a, .submenu-trigger { width: 100%; min-height: 48px; padding: 8px 0; display: flex; align-items: center; justify-content: space-between; border: 0; background: transparent; color: #fff; text-align: left; font-size: 17px; font-weight: 700; cursor: pointer; }
+.submenu-arrow { font-size: 28px; font-weight: 300; line-height: 1; }
+.side-menu-links a:hover, .submenu-trigger:hover { color: var(--bb-yellow); }
+.menu-section-title { padding: 8px 0 12px; color: #fff; font-size: 14px; font-weight: 900; }
+.submenu-header { width: 100%; border: 0; background: transparent; color: #fff; text-align: left; padding: 0 20px 18px; font-size: 19px; font-weight: 800; cursor: pointer; }
+.submenu-header span { margin-right: 9px; font-size: 25px; }
+
+@media (max-width: 700px) {
+    .side-menu { width: min(590px, 100vw); }
+    .side-menu-header { height: 72px; }
+    .side-menu-links a, .submenu-trigger { font-size: 15px; min-height: 43px; }
+}
