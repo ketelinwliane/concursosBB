@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Alerta educativo: phishing e segurança digital{% endblock %}
+
+{% block content %}
+<main class="awareness-page">
+    <div class="awareness-alert">
+        <strong>⚠️ ATENÇÃO: SIMULAÇÃO ACADÊMICA</strong>
+        <p>Esta página faz parte de um projeto educativo do 3º B de Informática do IFRO – Campus Ariquemes, na disciplina de Segurança de Dados, sob orientação do professor Felipe Balem. Não é um canal oficial do Banco do Brasil.</p>
+    </div>
+
+    <h1>🚨 Cuidado com o phishing!</h1>
+    <p>Phishing é um golpe virtual no qual criminosos se passam por pessoas ou empresas confiáveis para tentar roubar senhas, dados pessoais ou dinheiro. Eles podem usar e-mails, mensagens, sites falsos e links que parecem legítimos.</p>
+
+    <h2>Como reconhecer uma tentativa de phishing</h2>
+    <div class="awareness-grid">
+        <article class="awareness-card">
+            <h3>🎭 Identidade falsa</h3>
+            <p>Logotipos, nomes e páginas podem ser copiados para dar aparência de legitimidade. Confira o endereço completo do site e do remetente.</p>
+        </article>
+        <article class="awareness-card">
+            <h3>⏰ Urgência e pressão</h3>
+            <p>Ameaças de bloqueio, prazos muito curtos ou promessas boas demais tentam fazer você agir sem pensar.</p>
+        </article>
+        <article class="awareness-card">
+            <h3>🎣 Links suspeitos</h3>
+            <p>Links inesperados podem levar a páginas falsas ou instalar programas maliciosos. Não clique antes de verificar.</p>
+        </article>
+    </div>
+
+    <h2>Como se proteger</h2>
+    <ul class="awareness-list">
+        <li><strong>Desconfie de mensagens inesperadas</strong>, principalmente quando pedem uma ação imediata.</li>
+        <li><strong>Confira o endereço do site</strong> letra por letra; não confie apenas no logotipo ou no visual da página.</li>
+        <li><strong>Nunca compartilhe senhas ou códigos de autenticação</strong> por links, mensagens ou ligações não solicitadas.</li>
+        <li><strong>Não abra anexos nem links suspeitos</strong>; confirme a solicitação por um canal oficial acessado por você.</li>
+        <li><strong>Ative a autenticação em dois fatores</strong> sempre que possível e mantenha seus dispositivos atualizados.</li>
+        <li><strong>Se informar dados por engano</strong>, troque a senha imediatamente, encerre sessões ativas e contate a instituição pelos canais oficiais.</li>
+    </ul>
+
+    <h2>Sobre esta atividade</h2>
+    <p>O objetivo é demonstrar como uma página convincente pode despertar confiança e incentivar cliques. A melhor defesa é parar, conferir e desconfiar. Não informe senhas, dados bancários ou códigos nesta atividade.</p>
+    <a class="awareness-back" href="{{ url_for('main.index') }}#inscricao">Voltar para Cadastro</a>
+</main>
+{% endblock %}
